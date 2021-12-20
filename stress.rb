@@ -52,7 +52,7 @@ index_name = ARGV[0] || 'movies'
 index = client.index(index_name)
 
 nb_documents = 500000
-batch_size = 2000
+batch_size = 1000
 
 nb_send = (nb_documents/batch_size).ceil
 base_id = 0
