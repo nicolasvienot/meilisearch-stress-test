@@ -45,14 +45,14 @@ def create_dataset(nb_documents = 10, base_id)
     return documents
 end
 
-client = MeiliSearch::Client.new('https://ms-40e9b27258bc-133.saas.meili.dev', '994073c2a74b45c47403acfefd2ef97d8f6b1467')
+client = MeiliSearch::Client.new('https://ms-5aac7931e546-133.saas.meili.dev', 'a82d69e3b721b2da1faa29d597deb9cc37cba58d')
 
 index_name = ARGV[0] || 'movies'
 
 index = client.index(index_name)
 
 nb_documents = 500000
-batch_size = 10000
+batch_size = 2000
 
 nb_send = (nb_documents/batch_size).ceil
 base_id = 0
