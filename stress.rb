@@ -47,7 +47,8 @@ end
 
 client = MeiliSearch::Client.new('https://ms-40e9b27258bc-133.saas.meili.dev', '994073c2a74b45c47403acfefd2ef97d8f6b1467')
 
-index_name = 'lorem'
+index_name = ARGV[0] || 'movies'
+
 index = client.index(index_name)
 
 nb_documents = 500000
