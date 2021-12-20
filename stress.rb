@@ -45,7 +45,7 @@ def create_dataset(nb_documents = 10, base_id)
     return documents
 end
 
-client = MeiliSearch::Client.new('https://ms-d8f71247fb25-133.saas.meili.dev', 'fde1d553ffab037304648a175ecbc2da48f13265')
+client = MeiliSearch::Client.new('https://ms-cdc43430271b-133.saas.meili.dev', '77645631b33ab2fde4c33c50a644cd437139d2a8')
 
 index_name = ARGV[0] || 'movies'
 
