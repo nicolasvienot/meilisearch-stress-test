@@ -27,8 +27,8 @@ def create_dataset(nb_documents = 10, base_id)
                     email: Faker::Internet.unique.email,
                     address: Faker::Address.full_address,
                     phone: Faker::PhoneNumber.unique.cell_phone
+                    lorem: Faker::Lorem.paragraph_by_chars(number: 10000, supplemental: true)
                 }
-        puts(base_id + n)
     end
     return documents
 end
@@ -44,11 +44,16 @@ nb_send = (nb_documents/batch_size).ceil
 base_id = 0
 
 nb_send.times do |nb|
-    base_id = base_id + batch_size
     documents = create_dataset(batch_size, base_id)
     index.add_documents(documents)
+    base_id = base_id + batch_size
     puts "batch #{nb + 1} done"
 end
+
+test = Faker::Lorem.paragraph_by_chars(number: 10000, supplemental: true)
+
+puts test
+
 
 
 
